@@ -13,3 +13,12 @@ Content-Type: application/json
 {
     "fullurl":"invalid url"
 }
+
+###
+
+POST http://localhost:3001/api/v1/urls
+Content-Type: application/json
+
+{
+    "fullurl":"too short"
+}
