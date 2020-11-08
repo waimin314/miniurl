@@ -15,8 +15,8 @@ urlsRouter.post('/', async (request, response) => {
 
   const slug = nanoid(MAX_SLUG_LENGTH);
   const url = new URL({
-    miniurl: HOMEPAGE_URL + slug,
-    fullurl: body.fullurl,
+    miniUrl: HOMEPAGE_URL + slug,
+    fullUrl: body.fullUrl,
     slug,
   });
   const savedUrl = await url.save();

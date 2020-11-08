@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const urlSchema = mongoose.Schema({
-  miniurl: { type: String, required: true, minlength: 7 },
-  fullurl: { type: String, required: true, minlength: 10 },
+  miniUrl: { type: String, required: true, minlength: 7 },
+  fullUrl: { type: String, required: true, minlength: 10 },
   slug: { type: String, required: true, length: 7 },
 });
 
