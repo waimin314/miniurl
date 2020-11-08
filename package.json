@@ -1,0 +1,17 @@
+{
+  "name": "miniurl",
+  "version": "1.0.0",
+  "description": "A URL shortener with React, Nodejs and MongoDB",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Wai Min",
+  "license": "MIT"
+}
