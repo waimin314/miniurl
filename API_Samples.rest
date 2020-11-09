@@ -2,7 +2,7 @@ POST http://localhost:3001/api/v1/urls
 Content-Type: application/json
 
 {
-    "fullurl":"https://www.npmjs.com/package/nanoid"
+    "fullUrl":"https://www.npmjs.com/package/nanoid"
 }
 
 ###
@@ -11,7 +11,7 @@ POST http://localhost:3001/api/v1/urls
 Content-Type: application/json
 
 {
-    "fullurl":"invalid url"
+    "fullUrl":"invalid url"
 }
 
 ###
@@ -20,5 +20,5 @@ POST http://localhost:3001/api/v1/urls
 Content-Type: application/json
 
 {
-    "fullurl":"too short"
+    "fullUrl":"too short"
 }

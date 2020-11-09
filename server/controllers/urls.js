@@ -9,7 +9,7 @@ const MAX_SLUG_LENGTH = 7;
 urlsRouter.post('/', async (request, response) => {
   const body = request.body;
 
-  if (!validUrl.isWebUri(body.fullurl)) {
+  if (!validUrl.isWebUri(body.fullUrl)) {
     return response.status(400).send({ error: 'invalid link' });
   }
 
