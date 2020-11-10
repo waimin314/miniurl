@@ -1,15 +1,14 @@
 const urlsRouter = require('express').Router();
 const { nanoid } = require('nanoid');
 const validUrl = require('valid-url');
-const url = require('../models/url');
-const URL = require('../models/url');
+const Url = require('../models/url');
 const { HOMEPAGE_URL } = require('../utils/config');
 
 const MAX_SLUG_LENGTH = 7;
 
 urlsRouter.get('/:slug', async (request, response) => {
   const slug = request.params.slug;
-  const urlFromDB = await URL.findOne({ slug: slug });
+  const urlFromDB = await Url.findOne({ slug: slug });
 
   if (!urlFromDB) return response.status(404).send();
 
@@ -24,12 +23,12 @@ urlsRouter.post('/', async (request, response) => {
   }
 
   const slug = nanoid(MAX_SLUG_LENGTH);
-  const url = new URL({
+  const newUrl = new Url({
     miniUrl: HOMEPAGE_URL + slug,
     fullUrl: body.fullUrl,
     slug,
   });
-  const savedUrl = await url.save();
+  const savedUrl = await newUrl.save();
   response.status(201).json(savedUrl);
 });
 
