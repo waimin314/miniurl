@@ -32,6 +32,22 @@ describe('When saving a minified url', () => {
     const lastUrl = urlsAfterPost[initialUrls.length];
     expect(lastUrl.fullUrl).toEqual(newUrl.fullUrl);
   });
+
+  test('Should NOT save the invalid link', async () => {
+    const newUrl = {
+      fullUrl: 'ht tp invalid link',
+    };
+
+    await api.post('/api/v1/urls').send(newUrl).expect(400);
+    const urlsAfterPost = await urlsInDb();
+    expect(urlsAfterPost).toHaveLength(initialUrls.length);
+  });
+
+  test('Should NOT save the missing link', async () => {
+    await api.post('/api/v1/urls').send({}).expect(400);
+    const urlsAfterPost = await urlsInDb();
+    expect(urlsAfterPost).toHaveLength(initialUrls.length);
+  });
 });
 
 afterAll(() => {
