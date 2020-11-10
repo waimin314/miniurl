@@ -8,7 +8,7 @@ const MAX_SLUG_LENGTH = 7;
 
 urlsRouter.get('/:slug', async (request, response) => {
   const slug = request.params.slug;
-  const urlFromDB = await Url.findOne({ slug: slug });
+  const urlFromDB = await Url.findOne({ slug });
 
   if (!urlFromDB) return response.status(404).send();
 
