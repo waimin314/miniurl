@@ -50,6 +50,18 @@ describe('When saving a minified url', () => {
   });
 });
 
+describe('When retrieving a Url', () => {
+  test('Should redirect to the full Url if exists', async () => {
+    const currentUrls = await urlsInDb();
+    const { fullUrl, slug } = currentUrls[0];
+
+    await api
+      .get(`/api/v1/urls/${slug}`)
+      .expect('Location', fullUrl)
+      .expect(`Found. Redirecting to ${fullUrl}`);
+  });
+});
+
 afterAll(() => {
   mongoose.connection.close();
 });
