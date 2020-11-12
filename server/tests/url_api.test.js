@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = require('../app');
 const Url = require('../models/url');
 const { initialUrls, urlsInDb } = require('./test_helper');
+const { nanoid } = require('nanoid');
 
 const api = supertest(app);
 
@@ -59,6 +60,16 @@ describe('When retrieving a Url', () => {
       .get(`/api/v1/urls/${slug}`)
       .expect('Location', fullUrl)
       .expect(`Found. Redirecting to ${fullUrl}`);
+  });
+
+  test('Should return 404 if the path is not found', async () => {
+    const invalidSlug = nanoid(8);
+
+    await api.get(`/api/v1/urls/${invalidSlug}`).expect(404);
+  });
+
+  test('Should not do anything if no slug specified', async () => {
+    await api.get('/api/v1/urls/').expect(404);
   });
 });
 
