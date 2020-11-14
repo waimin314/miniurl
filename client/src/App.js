@@ -1,5 +1,12 @@
+import React from 'react';
+import UrlFrom from './components/UrlForm';
+
 function App() {
-  return <div>Hello GovTech</div>;
+  return (
+    <div>
+      <UrlFrom />
+    </div>
+  );
 }
 
 export default App;
