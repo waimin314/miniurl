@@ -12,7 +12,7 @@ urlsRouter.get('/:slug', async (request, response) => {
 
   if (!urlFromDB) return response.status(404).send();
 
-  response.redirect(urlFromDB.fullUrl);
+  response.json(urlFromDB);
 });
 
 urlsRouter.post('/', async (request, response) => {
