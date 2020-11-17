@@ -9,9 +9,9 @@ const getUrl = async (slug) => {
   try {
     const res = await API.get(slug);
 
-    return res.data;
+    return res;
   } catch (error) {
-    return error;
+    return error.response;
   }
 };
 

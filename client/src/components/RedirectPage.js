@@ -15,7 +15,12 @@ export default function RedirectPage({ slug }) {
   }, []);
 
   const renderRedirect = () => {
-    window.location.href = result.fullUrl;
+    const data = result.data;
+
+    if (!data) return;
+
+    window.location.href = data.fullUrl;
+
     return (
       <div>
         <div className='flex items-center mb-5'>
@@ -42,7 +47,7 @@ export default function RedirectPage({ slug }) {
           </svg>
           Redirecting to
         </div>
-        <p className='font-bold'>{result.fullUrl}</p>
+        <p className='font-bold'>{data.fullUrl}</p>
       </div>
     );
   };
@@ -58,7 +63,7 @@ export default function RedirectPage({ slug }) {
 
   return (
     <div className='flex flex-col text-lg mx-10 p-2'>
-      {result.fullUrl ? renderRedirect() : renderErrorMesage()}
+      {result.status === 404 ? renderErrorMesage() : renderRedirect()}
     </div>
   );
 }
