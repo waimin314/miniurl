@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import urlService from './../services/urls';
+import Alert from './Alert';
 
 export default function UrlForm() {
   const [url, setUrl] = useState('');
   const [miniUrls, setMiniUrls] = useState([]);
+  const [status, setStatus] = useState({});
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await urlService.minify(url);
-    console.log('handleSubmit -> res', res);
-    if (res.statusText === 'Created') {
-      setMiniUrls(miniUrls.concat(res.data.miniUrl));
+    const result = await urlService.minify(url);
+    console.log('handleSubmit -> res', result);
+    if (result.statusText === 'Created') {
+      setMiniUrls(miniUrls.concat(result.data.miniUrl));
       setUrl('');
+    }
+    updateStatus(result);
+  };
+
+  const updateStatus = (result) => {
+    if (result.statusText === 'Created') {
+      setStatus({ type: 'Success', text: 'MiniUrl created successfully' });
+    } else if (result.statusText === 'Bad Request') {
+      setStatus({ type: 'Error', text: 'Invalid url' });
     }
   };
 
@@ -31,6 +42,7 @@ export default function UrlForm() {
 
   return (
     <div className='px-10'>
+      {status && <Alert type={status.type} text={status.text} />}
       <form className='my-5' onSubmit={(event) => handleSubmit(event)}>
         <input
           className='w-full my-5 p-2 text-xl  border border-gray-800 rounded-sm
@@ -40,6 +52,7 @@ export default function UrlForm() {
           value={url}
           onChange={(event) => {
             setUrl(event.target.value);
+            setStatus({});
           }}
         />
         <input
