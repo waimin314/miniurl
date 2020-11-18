@@ -15,4 +15,14 @@ const getUrl = async (slug) => {
   }
 };
 
-export default { getUrl };
+const minify = async (url) => {
+  try {
+    const res = await API.post('/', { fullUrl: url });
+
+    return res;
+  } catch (error) {
+    return error.response;
+  }
+};
+
+export default { getUrl, minify };
