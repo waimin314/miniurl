@@ -43,12 +43,20 @@ export default function UrlForm() {
     });
   };
 
+  const renderStatus = () => {
+    return (
+      <div className='h-20'>
+        {isSaving && (
+          <p className='animate-pulse text-xl font-semibold'>Minifying...</p>
+        )}
+        {status && <Alert type={status.type} text={status.text} />}
+      </div>
+    );
+  };
+
   return (
     <div className='px-10'>
-      {isSaving && (
-        <p className='animate-pulse text-xl font-semibold'>Minifying...</p>
-      )}
-      {status && <Alert type={status.type} text={status.text} />}
+      {renderStatus()}
       <form className='my-5' onSubmit={(event) => handleSubmit(event)}>
         <input
           className='w-full my-5 p-2 text-xl  border border-gray-800 rounded-sm
