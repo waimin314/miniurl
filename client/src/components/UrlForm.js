@@ -80,7 +80,7 @@ export default function UrlForm() {
           value='Minify'
         />
       </form>
-      <div className='h-48 overflow-y-scroll'>{renderMiniUrls()}</div>
+      <div className='h-48 overflow-y-auto'>{renderMiniUrls()}</div>
     </div>
   );
 }
