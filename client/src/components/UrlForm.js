@@ -33,7 +33,9 @@ export default function UrlForm() {
     return miniUrls.map((url, index) => {
       return (
         <a
-          className='block text-lg mb-2 py-1 px-2 bg-indigo-200 rounded-md hover:shadow-md'
+          className='block text-lg mb-2 py-1 px-2 bg-indigo-200 
+                     rounded-md hover:shadow-md underline text-indigo-700
+                     lg:flex lg:w-full '
           href={url}
           key={index}
         >
@@ -55,12 +57,13 @@ export default function UrlForm() {
   };
 
   return (
-    <div className='px-10'>
+    <div className='px-10 lg:w-full lg:max-w-4xl'>
       {renderStatus()}
-      <form className='my-5' onSubmit={(event) => handleSubmit(event)}>
+      <form className='my-5 lg:flex' onSubmit={(event) => handleSubmit(event)}>
         <input
           className='w-full my-5 p-2 text-xl  border border-gray-800 rounded-sm
-                    focus:border-indigo-600 focus:outline-none'
+                    focus:border-indigo-600 focus:outline-none
+                    lg:max-w-2xl lg:mr-5'
           type='text'
           placeholder='Paste your full link here'
           value={url}
@@ -70,7 +73,9 @@ export default function UrlForm() {
           }}
         />
         <input
-          className='w-full p-2 mb-10 bg-indigo-600 text-white text-xl tracking-wider rounded-md shadow-lg'
+          className='w-full p-2 mb-10 bg-indigo-600 
+                  text-white text-xl tracking-wider rounded-md shadow-lg
+                    lg:w-32 lg:my-5'
           type='submit'
           value='Minify'
         />
