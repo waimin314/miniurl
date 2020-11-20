@@ -73,8 +73,9 @@ export default function UrlForm() {
           }}
         />
         <input
-          className='w-full p-2 mb-10 bg-indigo-600 
-                  text-white text-xl tracking-wider rounded-md shadow-lg
+          className='w-full p-2 mb-10 bg-indigo-600 rounded-md shadow-lg
+                  text-white text-xl tracking-wider cursor-pointer
+                  hover:bg-indigo-700 hover:shadow-outline 
                     lg:w-32 lg:my-5'
           type='submit'
           value='Minify'
