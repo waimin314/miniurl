@@ -6,10 +6,13 @@ export default function UrlForm() {
   const [url, setUrl] = useState('');
   const [miniUrls, setMiniUrls] = useState([]);
   const [status, setStatus] = useState({});
+  const [isSaving, setSaving] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSaving(true);
     const result = await urlService.minify(url);
+    setSaving(false);
     console.log('handleSubmit -> res', result);
     if (result.statusText === 'Created') {
       setMiniUrls(miniUrls.concat(result.data.miniUrl));
@@ -42,6 +45,9 @@ export default function UrlForm() {
 
   return (
     <div className='px-10'>
+      {isSaving && (
+        <p className='animate-pulse text-xl font-semibold'>Minifying...</p>
+      )}
       {status && <Alert type={status.type} text={status.text} />}
       <form className='my-5' onSubmit={(event) => handleSubmit(event)}>
         <input
