@@ -6,7 +6,10 @@ function App() {
   // Get pathname without '/' character
   const slug = window.location.pathname.substring(1);
   return (
-    <div className='h-screen flex flex-col justify-center items-center'>
+    <div
+      className='h-screen flex flex-col justify-center items-center px-5 
+          bg-gradient-to-b from-indigo-400 to-indigo-300'
+    >
       {slug.length > 0 && <RedirectPage slug={slug} />}
       <UrlFrom />
     </div>

@@ -57,7 +57,10 @@ export default function UrlForm() {
   };
 
   return (
-    <div className='px-10 lg:w-full lg:max-w-4xl'>
+    <div
+      className='px-6 bg-white rounded-md shadow-lg py-5
+                  md:px-10 lg:w-full lg:max-w-4xl'
+    >
       {renderStatus()}
       <form className='my-5 lg:flex' onSubmit={(event) => handleSubmit(event)}>
         <input
