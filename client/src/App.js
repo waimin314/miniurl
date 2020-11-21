@@ -11,7 +11,7 @@ function App() {
           bg-gradient-to-b from-indigo-400 to-indigo-300'
     >
       {slug.length > 0 && <RedirectPage slug={slug} />}
-      <UrlFrom />
+      {slug.length === 0 && <UrlFrom />}
     </div>
   );
 }
