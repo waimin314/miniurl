@@ -22,7 +22,10 @@ export default function RedirectPage({ slug }) {
     window.location.href = data.fullUrl;
 
     return (
-      <div>
+      <div
+        className='bg-white p-5 rounded-md shadow-md 
+                      lg:w-3/5 lg:mx-auto'
+      >
         <div className='flex items-center mb-5'>
           {/* Spinning circle */}
           <svg
@@ -53,16 +56,25 @@ export default function RedirectPage({ slug }) {
   };
 
   const renderErrorMesage = () => {
+    setTimeout(() => {
+      window.location.href = window.location.origin;
+    }, 3000);
     return (
-      <div className='text-red-600 break-all'>
+      <div
+        className=' w-full p-5 text-red-600 break-all bg-red-100 rounded-md shadow-md
+                      lg:w-3/5 lg:mx-auto'
+      >
         No valid Url found for <br />
-        <strong>{window.location.href}</strong>
+        <p className='text-xl italic my-3'>{window.location.href}</p>
+        <p className='animate-pulse text-lg text-black'>
+          Redirecting to {window.location.origin} ...
+        </p>
       </div>
     );
   };
 
   return (
-    <div className='flex flex-col text-lg mx-10 p-2'>
+    <div className='w-full flex flex-col text-lg mx-10 p-2'>
       {result.status === 404 ? renderErrorMesage() : renderRedirect()}
     </div>
   );
