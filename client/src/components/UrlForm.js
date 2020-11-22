@@ -29,19 +29,51 @@ export default function UrlForm() {
     }
   };
 
+  const copyToClipboard = (url) => {
+    navigator.clipboard.writeText(url);
+  };
+
   const renderMiniUrls = () => {
     return miniUrls.map((url, index) => {
       return (
-        <a
-          className='block text-lg mb-2 py-1 px-2 bg-indigo-200 
-                     rounded-md hover:shadow-md underline text-indigo-700
-                     lg:flex lg:w-full '
-          href={url}
-          target='blank'
-          key={index}
+        <div
+          className='flex items-center bg-indigo-200 my-2 p-2 rounded-md 
+                        lg:p-5'
         >
-          {url}
-        </a>
+          <button
+            className='w-10 p-2 bg-indigo-600 rounded-md shadow-lg
+                  text-white text-xl tracking-wider cursor-pointer
+                  hover:bg-indigo-700 hover:shadow-outline 
+                    lg:w-12'
+            onClick={() => {
+              copyToClipboard(url);
+            }}
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3'
+              />
+            </svg>
+          </button>
+          <a
+            className='text-lg py-1 px-2
+                     rounded-md underline text-indigo-700
+                     '
+            href={url}
+            target='blank'
+            key={index}
+          >
+            {url}
+          </a>
+        </div>
       );
     });
   };
