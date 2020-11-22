@@ -13,7 +13,7 @@ export default function UrlForm() {
     setSaving(true);
     const result = await urlService.minify(url);
     setSaving(false);
-    console.log('handleSubmit -> res', result);
+
     if (result.statusText === 'Created') {
       setMiniUrls([result.data.miniUrl, ...miniUrls]);
       setUrl('');

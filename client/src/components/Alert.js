@@ -15,7 +15,6 @@ export default function Alert({ type, text }) {
       className +=
         'bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 ';
     }
-    console.log('className', className);
     return className;
   };
 
