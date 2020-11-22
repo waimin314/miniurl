@@ -22,7 +22,7 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 
 **Backend** => NodeJS + Express + mongoDB
 
-**Front-End** => React, Create React App
+**Front-End** => React, Create React App, TailwindCSS
 
 #### 2. Setting up
 
@@ -41,7 +41,7 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
    
     **`npm start`**
 
-    Starts the `server.js` located inside **server** folder
+    Starts `server.js` located inside **server** folder
 
     **`npm run server`**
     
@@ -53,13 +53,13 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 
     **`npm test`**
     
-    Runs tests inside **server** folder
+    Runs the tests inside **server** folder
 
 2. Inside the **client** folder
    
     **`npm start`**
     
-    Starts client in development mode
+    Starts the client in development mode
 
     **`npm run build`**
     
@@ -67,4 +67,4 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 
     **`npm test`**
     
-    Runs client tests
+    Runs the client tests
