@@ -25,4 +25,4 @@ const minify = async (url) => {
   }
 };
 
-export default { getUrl, minify };
+export { getUrl, minify };

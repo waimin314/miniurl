@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import urlService from './../services/urls';
+import * as urlService from './../services/urls';
 import Alert from './Alert';
 
 export default function UrlForm() {

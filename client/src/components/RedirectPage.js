@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import urlService from '../services/urls';
+import * as urlService from '../services/urls';
 
 export default function RedirectPage({ slug }) {
   const [result, setResult] = useState({});
