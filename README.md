@@ -22,15 +22,19 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 
 **Backend** => NodeJS + Express + mongoDB
 
-**Front-End** => React, Create React App, TailwindCSS
+**Front-End** => React + Create React App + TailwindCSS
 
 #### 2. Setting up
 
 1. Rename `.env-sample` to `.env`
-2. Inside `env`, add the following
+2. Inside `.env`, add the following
+
    a. `MONGODB_URI` => Your mongodb URI for saving and retrieving the urls
+   
    b. `TEST_MONGODB_URI` => Mongodb URI for testing the server
+   
    c. `HOMEPAGE_URL` => The base url of the client in development. By default, it is set to localhost:3000 as per CRA
+   
    d. `HOMEPAGE_URL_PROD` => same as `HOMEPAGE_URL`, but for production mode. For example, in the demo above, it will be `https://miniurl-gt.vercel.app/`
 
 3. Run `npm i` inside the main directory for server and inside **client** folder for client npm installation
