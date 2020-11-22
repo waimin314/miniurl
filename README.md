@@ -21,6 +21,7 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 #### 1. Tech stack
 
 **Backend** => NodeJS + Express + mongoDB
+
 **Front-End** => React, Create React App
 
 #### 2. Setting up
@@ -39,24 +40,31 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 1. Inside the **main** folder
    
     **`npm start`**
+
     Starts the `server.js` located inside **server** folder
 
     **`npm run server`**
+    
     Runs `server.js` with **nodemon** for development
 
     **`npm run dev`**
+    
     Launches both **client** and **server** simultaneously
 
     **`npm test`**
+    
     Runs tests inside **server** folder
 
 2. Inside the **client** folder
    
     **`npm start`**
+    
     Starts client in development mode
 
     **`npm run build`**
+    
     Builds the app for production to the **build** folder
 
     **`npm test`**
+    
     Runs client tests
