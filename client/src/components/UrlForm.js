@@ -37,6 +37,7 @@ export default function UrlForm() {
                      rounded-md hover:shadow-md underline text-indigo-700
                      lg:flex lg:w-full '
           href={url}
+          target='blank'
           key={index}
         >
           {url}
