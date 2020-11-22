@@ -10,7 +10,7 @@ export default function RedirectPage({ slug }) {
       if (res) setResult(res);
     };
     fetchUrl();
-  }, []);
+  }, [slug]);
 
   const renderRetrieving = () => {
     return (
