@@ -42,7 +42,7 @@ export default function RedirectPage({ slug }) {
           </svg>
           Retrieving full link from server for
         </div>
-        <p className='font-bold'>{window.location.href}</p>
+        <p className='font-bold break-all'>{window.location.href}</p>
       </div>
     );
   };
@@ -81,7 +81,7 @@ export default function RedirectPage({ slug }) {
           </svg>
           Redirecting to
         </div>
-        <p className='font-bold'>{data.fullUrl}</p>
+        <p className='font-bold break-all'>{data.fullUrl}</p>
       </div>
     );
   };
@@ -111,7 +111,7 @@ export default function RedirectPage({ slug }) {
   };
 
   return (
-    <div className='w-full flex flex-col text-lg mx-10 p-2'>
+    <div className='flex flex-col text-lg mx-10 p-2 lg:w-full'>
       {renderStatus()}
     </div>
   );
