@@ -40,6 +40,7 @@ export default function UrlForm() {
         <div
           className='flex items-center bg-indigo-200 my-2 p-2 rounded-md 
                         lg:p-5'
+          key={index}
         >
           <button
             className='w-10 p-2 bg-indigo-600 rounded-md shadow-lg
@@ -70,7 +71,6 @@ export default function UrlForm() {
                      '
             href={url}
             target='blank'
-            key={index}
           >
             {url}
           </a>
