@@ -1,8 +1,8 @@
 const Url = require('../models/url');
 const { HOMEPAGE_URL } = require('../utils/config');
-const { nanoid } = require('nanoid');
+const { generateSlug } = require('../utils/generator');
 
-const slugs = [nanoid(7), nanoid(7), nanoid(7)];
+const slugs = [generateSlug(), generateSlug(), generateSlug()];
 
 const initialUrls = [
   {
