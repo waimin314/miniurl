@@ -15,7 +15,7 @@ export default function UrlForm() {
     setSaving(false);
     console.log('handleSubmit -> res', result);
     if (result.statusText === 'Created') {
-      setMiniUrls(miniUrls.concat(result.data.miniUrl));
+      setMiniUrls([result.data.miniUrl, ...miniUrls]);
       setUrl('');
     }
     updateStatus(result);
