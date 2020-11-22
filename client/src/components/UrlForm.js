@@ -31,6 +31,7 @@ export default function UrlForm() {
 
   const copyToClipboard = (url) => {
     navigator.clipboard.writeText(url);
+    setStatus({ type: 'Success', text: 'Copied successfully' });
   };
 
   const renderMiniUrls = () => {
