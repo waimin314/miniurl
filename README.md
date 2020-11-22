@@ -28,6 +28,7 @@ Demo: [miniurl-gt.vercel.app](https://miniurl-gt.vercel.app/)
 
 1. Rename `.env-sample` to `.env`
 2. Inside `.env`, add the following
+
    a. `MONGODB_URI` => Your mongodb URI for saving and retrieving the urls
    
    b. `TEST_MONGODB_URI` => Mongodb URI for testing the server
