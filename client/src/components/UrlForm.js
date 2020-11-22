@@ -77,7 +77,7 @@ export default function UrlForm() {
           }}
         />
         <input
-          className='w-full p-2 mb-10 bg-indigo-600 rounded-md shadow-lg
+          className='w-full p-2 mb-5 bg-indigo-600 rounded-md shadow-lg
                   text-white text-xl tracking-wider cursor-pointer
                   hover:bg-indigo-700 hover:shadow-outline 
                     lg:w-32 lg:my-5'
@@ -85,7 +85,7 @@ export default function UrlForm() {
           value='Minify'
         />
       </form>
-      <div className='h-48 overflow-y-auto'>{renderMiniUrls()}</div>
+      <div className='h-56 overflow-y-auto lg:h-64'>{renderMiniUrls()}</div>
     </div>
   );
 }
